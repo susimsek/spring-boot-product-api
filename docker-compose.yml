@@ -7,7 +7,7 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=test2
+      - MYSQL_DATABASE=db
     volumes:
       - my-db:/var/lib/mysql
 
@@ -21,7 +21,7 @@ services:
       - 8000:8080
       - 8001:8001
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/test2?autoReconnect=true&useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/db?autoReconnect=true&useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
 
