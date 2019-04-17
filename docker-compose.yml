@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: spring-petclinic-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test2
+    volumes:
+      - my-db:/var/lib/mysql
+
+  webservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    ports:
+      - 8000:8080
+      - 8001:8001
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/test2?autoReconnect=true&useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+
+volumes:
+  my-db:
