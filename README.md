@@ -4,6 +4,7 @@
 
 # Technologies Used
 - Java 8
+- Maven 3.6.0
 - Spring Boot
 - Spring MVC
 - Spring Data JPA
