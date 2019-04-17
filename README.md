@@ -8,12 +8,14 @@
 - Spring Boot
 - Spring MVC
 - Spring Data JPA
+- Swagger 2
 - Apache Commons Logging
 - Mysql 5.7
 - Docker 18.09.2
 - Docker Compose 1.23.2
 - Spring Dev Tools
 - Spring Actuator
+
 
 # Requirement for Development and Build
 - JDK 1.8

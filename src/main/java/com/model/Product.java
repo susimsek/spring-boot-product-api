@@ -1,6 +1,8 @@
 package com.model;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -8,11 +10,25 @@ import java.math.BigDecimal;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @ApiModelProperty(notes = "The database generated product ID")
     private Integer id;
+
     @Version
+    @Column(name = "version")
+    @ApiModelProperty(notes = "The auto-generated version of the product")
     private Integer version;
+
+    @Column(name = "product_id")
+    @ApiModelProperty(notes = "The application-specific product ID")
     private String productId;
+
+    @Column(name = "description")
+    @ApiModelProperty(notes = "The product description")
     private String description;
+
+    @Column(name = "price")
+    @ApiModelProperty(notes = "The price of the product", required = true)
     private BigDecimal price;
 
 
